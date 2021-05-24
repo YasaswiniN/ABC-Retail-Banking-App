@@ -1,0 +1,10 @@
+.highlighter{
+  /* position: fixed; */
+    /* top: 48px; */
+    width: 100%;
+    /* z-index: 99999; */
+    border-bottom: 1px solid #e1e1e1;
+    /* height: 57px; */
+    background-color: #fff;
+    box-shadow: 0 2px 1px #e1e1e1
+}

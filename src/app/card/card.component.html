@@ -1,0 +1,113 @@
+<div class="card m-3">
+    <h5 class="card-header">Credit Card from ABC Retail Bank</h5>
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="form-group row">
+                <h2>Hello. Tell us about yourself</h2>
+            </div>
+            <div class="form-group row">               
+                <div class="col-2">
+                    <label for="name">First Name</label>
+                    <input formControlName="name" id="name" type="text" class="form-control"
+                        [ngClass]="{'is-invalid':submitted&&f.name.errors}">
+                    <div *ngIf="submitted && f.name.errors" class="redcolor">
+                        <div *ngIf="f.name.errors.required">First Name is required.</div>
+                        <div *ngIf="f.name.errors.minlength">first Name should be 3 character.</div>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <label for="middlename">Middle Name</label>
+                    <input formControlName="middlename" id="middlename" type="text" class="form-control"
+                        [ngClass]="{'is-invalid':submitted&&f.middlename.errors}">
+                    <div *ngIf="submitted && f.middlename.errors" class="redcolor">
+                        <div *ngIf="f.middlename.errors.required">Middle Name is required.</div>
+                        <div *ngIf="f.middlename.errors.minlength">Middle Name should be 3 character.</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="lastname">Last Name</label>
+                    <input formControlName="lastname" id="lastname" type="text" class="form-control"
+                        [ngClass]="{'is-invalid':submitted&&f.lastname.errors}">
+                    <div *ngIf="submitted && f.lastname.errors" class="redcolor">
+                        <div *ngIf="f.lastname.errors.required">Last Name is required.</div>
+                        <div *ngIf="f.lastname.errors.minlength">Last Name should be 3 character.</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="namecard">Name on Card</label>
+                    <input formControlName="namecard" id="namecard" type="text" class="form-control"
+                        [ngClass]="{'is-invalid':submitted&&f.namecard.errors}">
+                    <div *ngIf="submitted && f.namecard.errors" class="redcolor">
+                        <div *ngIf="f.namecard.errors.required">Name on Card is required.</div>
+                        <div *ngIf="f.namecard.errors.minlength">Name on Card should be less than 20 character.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">                
+                <div class="col-4">
+                    <label for="pannumber">Pan Number</label>
+                    <input formControlName="pannumber" id="pannumber" type="text" class="form-control"
+                        [ngClass]="{'is-invalid':submitted&&f.pannumber.errors}">
+                    <div *ngIf="submitted && f.pannumber.errors" class="redcolor">
+                        <div *ngIf="f.pannumber.errors.required">Pan Number is required.</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="email">Email</label>
+                    <input formControlName="email" id="email" type="text" class="form-control"
+                        [ngClass]="{'is-invalid':submitted&&f.email.errors}">
+                    <div *ngIf="submitted && f.email.errors" class="redcolor">
+                        <div *ngIf="f.email.errors.required">Email is required.</div>
+                        <div *ngIf="f.email.errors.pattern">Please enter valid email address.</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="mobilenumber">Mobile Number</label>
+                    <input formControlName="mobilenumber" id="mobilenumber" type="text" class="form-control"
+                        [ngClass]="{'is-invalid':submitted&&f.mobilenumber.errors}">
+                    <div *ngIf="submitted && f.mobilenumber.errors" class="redcolor">
+                        <div *ngIf="f.mobilenumber.errors.required">Mobile Number is required.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">               
+                <div class="col-4">
+                    <label for="address">Address</label>
+                    <textarea formControlName="address" id="address" class="form-control"
+                    [ngClass]="{'is-invalid':submitted&&f.address.errors}"></textarea>
+                    <div *ngIf="submitted && f.address.errors" class="redcolor">
+                        <div *ngIf="f.address.errors.required">Address is required.</div>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <label for="zipcode">Zip code</label>
+                    <input formControlName="zipcode" id="zipcode" type="text" class="form-control"
+                        [ngClass]="{'is-invalid':submitted&&f.zipcode.errors}">
+                    <div *ngIf="submitted && f.zipcode.errors" class="redcolor">
+                        <div *ngIf="f.zipcode.errors.required">Zip code is required.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" formControlName="invalidCheck" id="invalidCheck"
+                            [ngClass]="{'is-invalid':submitted&&f.invalidCheck.errors}" />
+                        <label class="form-check-label" for="invalidCheck">
+                            Accept Terms & conditions
+                        </label>
+                        <div *ngIf="submitted && f.invalidCheck.errors" class="redcolor">
+                            <div *ngIf="f.invalidCheck.errors.required">
+                                Accept Ts & Cs is required
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary  mr-1" (click)="submit()">Register</button>
+                <button class="btn btn-secondary" (click)="cancelFun()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

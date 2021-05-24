@@ -1,0 +1,123 @@
+<div class="">
+    <div class="row">
+        <nav class="navbar navbar-dark" style="background-color: #3b536f">
+            <div class="col-1"></div>
+            <div class="col-9">
+                <div class="row">
+                    <div class="col-3"><span class="navbar-brand">ABC Retail Bank</span></div>
+                    <div class="col-7">
+                        <ul class="nav nav-tabs">
+                            <li class="nav-item" class="active">
+                                <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/account" routerLinkActive="active">Apply Account</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" routerLink="/card" routerLinkActive="active">Apply Card</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/loan" routerLinkActive="active">Apply Loan</a>
+                            </li> -->
+                            <li class="nav-item">
+                                <a class="nav-link" routerLink="/contactus" routerLinkActive="active">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </nav>
+    </div>
+    <div class="row" *ngIf="!userservice.loginFlag">
+        <nav class="navbar navbar-dark highlighter">
+            <div class="col-1"></div>
+            <div class="col-7"><span style="font-size: 18px;">Welcome!</span></div>
+            <div class="col-2">
+                <button type="submit" class="btn btn-primary" routerLink="/login" routerLinkActive="active">LOGIN</button>
+                <!-- <a class="btn btn-link" routerLink="/login" routerLinkActive="active">Login</a> -->
+            </div>
+            <div class="col-2"></div>           
+        </nav>
+    </div>
+    <div class="row">
+        <div class="">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+<footer class="bg-dark text-center text-white fixed-bottom">
+    <div class="text-center p-3">
+        © 2021 Copyright: ABC Retail Bank
+    </div>
+</footer>
+
+
+
+<!--<div class="toolbar">  
+  <div>
+    <a class="btn btn-link" style="color:black"  routerLink="/login" routerLinkActive="active">Login</a>
+  </div> 
+ <div>
+  <a class="btn btn-link" style="color:black"  routerLink="/register" routerLinkActive="active">Register</a>
+ </div>
+ <div>
+  <a class="btn btn-link" style="color:black"  routerLink="/reactiveForm" routerLinkActive="active">Reactive Form</a>
+  <a class="btn btn-link" style="color:black"  routerLink="/templateDrivenForm" routerLinkActive="active">Template Driven Form</a>
+  <a class="btn btn-link" style="color:black"  routerLink="/decorators" routerLinkActive="active">Decorators</a>
+  <a class="btn btn-link" style="color:black"  routerLink="/directives" routerLinkActive="active">Directives & Pipes</a>  
+  
+</div> 
+</div>
+
+<div class="content" role="main">
+  <div class="card-container">   
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+
+-->
+
+<!--<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-sm-offset-1 col-md-offset-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item" class="active">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/reactiveForm" routerLinkActive="active">Reactive Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/templateDrivenForm" routerLinkActive="active">Template Driven
+                        Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/decorators" routerLinkActive="active">Decorators</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/directives" routerLinkActive="active">Directives & Pipes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/routerlink" routerLinkActive="active">Router Links</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/httpServices" routerLinkActive="active">Http Service</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-10 col-sm-offset-1 col-md-offset-2">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+-->

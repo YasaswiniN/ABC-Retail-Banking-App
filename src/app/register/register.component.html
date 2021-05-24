@@ -1,0 +1,109 @@
+<div class="m-3" style="padding-bottom: 50px;">   
+    <div class="" style="padding: 20px;">
+        <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" [mustMatch]="['password', 'confirmPassword']" novalidate>
+            <div class="row">
+                <h2>User Registration Form - New User</h2>
+            </div>
+            <div class="row">                
+                <div class="col-2">
+                    <label>Account Number</label>                   
+                </div> 
+                <div class="col-3">
+                    <input type="text" name="account" class="form-control" [(ngModel)]="model.account" #account="ngModel" [ngClass]="{ 'is-invalid': f.submitted && account.invalid }" required>
+                    <div *ngIf="f.submitted && account.invalid" class="invalid-feedback">
+                        <div *ngIf="account.errors.required">Account Number is required</div>
+                    </div>
+                </div>               
+            </div>
+            <div class="row">                
+                <div class="col-2">
+                    <label>CIF Number</label>                    
+                </div> 
+                <div class="col-3">
+                    <input type="text" name="cif" class="form-control" [(ngModel)]="model.cif" #cif="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cif.invalid }" required>
+                    <div *ngIf="f.submitted && cif.invalid" class="invalid-feedback">
+                        <div *ngIf="cif.errors.required">CIF Number is required</div>
+                    </div>
+                </div>               
+            </div>
+            <div class="row">                
+                <div class="col-2">
+                    <label>Branch Code</label>                   
+                </div>  
+                <div class="col-3">
+                    <input type="text" name="code" class="form-control" [(ngModel)]="model.code" #code="ngModel" [ngClass]="{ 'is-invalid': f.submitted && code.invalid }" required>
+                    <div *ngIf="f.submitted && code.invalid" class="invalid-feedback">
+                        <div *ngIf="code.errors.required">Branch code is required</div>
+                    </div>
+                </div>              
+            </div>
+            <div class="row">                
+                <div class="col-2">
+                    <label>Country</label>                   
+                </div> 
+                <div class="col-3">
+                    <select name="country" class="form-control" [(ngModel)]="model.country" #country="ngModel" [ngClass]="{ 'is-invalid': f.submitted && country.invalid }" required value="1">
+                        <option value="1">Select</option>
+                        <option value="2">India</option>
+                        <option value="3">Australia</option>
+                        <option value="4">USA</option>
+                        <option value="5">UK</option>
+                    </select>
+                    <div *ngIf="f.submitted && country.invalid" class="invalid-feedback">
+                        <div *ngIf="country.errors.required">Country is required</div>
+                    </div>
+                </div>                               
+            </div>
+            <div class="row">                
+                <div class="col-2">
+                    <label>Mobile Number</label>
+                </div>  
+                <div class="col-3">
+                    <input type="text" name="mobilenumber" class="form-control" [(ngModel)]="model.mobilenumber" #mobilenumber="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mobilenumber.invalid }" required>
+                    <div *ngIf="f.submitted && mobilenumber.invalid" class="invalid-feedback">
+                        <div *ngIf="mobilenumber.errors.required">Mobile Number is required</div>
+                    </div>
+                </div>              
+            </div>   
+            <div class="row">
+                <div class="col-2">
+                    <label>User Name</label>                   
+                </div>
+                <div class="col-3">
+                    <input type="text" name="username" class="form-control" [(ngModel)]="model.username" #username="ngModel" [ngClass]="{ 'is-invalid': f.submitted && username.invalid }" required >
+                    <div *ngIf="f.submitted && username.invalid" class="invalid-feedback">
+                        <div *ngIf="username.errors.required">Username is required</div>
+                    </div>
+                </div>                
+            </div>           
+            <div class="row">
+                <div class="col-2">
+                    <label>Password</label>                   
+                </div>
+                <div class="col-3">
+                    <input type="password" name="password" class="form-control" [(ngModel)]="model.password" #password="ngModel" [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="6">
+                    <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                        <div *ngIf="password.errors.required">Password is required</div>
+                        <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+                    </div>
+                </div>                
+            </div>  
+            <div class="row">
+                <div class="col-2">
+                    <label>Confirm Password</label>                   
+                </div>
+                <div class="col-3">
+                    <input type="password" name="confirmPassword" class="form-control" [(ngModel)]="model.confirmPassword" #confirmPassword="ngModel" [ngClass]="{ 'is-invalid': f.submitted && confirmPassword.invalid }" required>
+                    <div *ngIf="f.submitted && confirmPassword.invalid" class="invalid-feedback">
+                        <div *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
+                        <div *ngIf="confirmPassword.errors.mustMatch">Passwords must match</div>
+                    </div>
+                </div>
+            </div>          
+            <div class="text-center col-5" style="text-align:center;padding-top:10px">
+                <button class="btn btn-primary mr-3">Register</button>
+                <button class="btn btn-secondary" type="reset">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

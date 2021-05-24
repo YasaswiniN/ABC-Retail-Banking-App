@@ -1,0 +1,36 @@
+<div *ngIf="userservice.loginFlag">
+<div class="row">
+    <nav class="navbar navbar-dark highlighter">
+      <div class="col-1"></div>
+        <div class="col-2"><h2>Hello {{userservice.loginCustomerdetails.username}}</h2></div>
+        <div class="col-5">            
+    <div class="input-group">
+        <input type="text" class="form-control" [(ngModel)]="searchtext" placeholder="Search by customer account number/name">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" type="button" (click)="search()">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+      </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary" (onclick)="userservice.loginFlag=false;" routerLink="/login" routerLinkActive="active">Logout</button>
+        </div>
+        <div class="col-2"></div>           
+    </nav>
+</div>
+<div class="row">
+  <div class="col-xs-1 col-sm-3 col-md-4 col-sm-offset-1 col-md-offset-2">
+     <ul class="nav nav-tabs flex-column" *ngFor="let rec of records"> 
+         <li class="nav-item" class="active">
+           <a class="nav-link"  [routerLink]="['/dashboard',rec]" routerLinkActive="active">{{rec}}</a>
+         </li>    
+      </ul>
+</div>    
+<div class="col-xs-11 col-sm-9 col-md-8 col-sm-offset-1 col-md-offset-2">
+ <router-outlet></router-outlet>
+</div>
+</div> 
+</div>
+
